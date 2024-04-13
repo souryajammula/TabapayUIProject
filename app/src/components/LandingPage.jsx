@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import { seasons } from '../SampleData'; // Assuming you have sample data in a separate file
 
-const LandingPage = ({ treeItems, onNodeSelect }) => {
+const LandingPage = ({onNodeSelect }) => {
   const [expandedNodeId, setExpandedNodeId] = useState([]);
 
   const getTreeItemsFromData = (treeItems, parentIds = []) => {
@@ -17,7 +17,6 @@ const LandingPage = ({ treeItems, onNodeSelect }) => {
       if (treeItemData.children && treeItemData.children.length > 0) {
         children = getTreeItemsFromData(treeItemData.children, nodeParentIds);
       }
-      
       const isExpanded = expandedNodeId.includes(treeItemData.id);
       const handleNodeClick = (event, treeItemData) => {
         event.stopPropagation();
@@ -26,7 +25,7 @@ const LandingPage = ({ treeItems, onNodeSelect }) => {
 
       return (
         <TreeItem
-          key={treeItemData.id} // Ensure unique key for each TreeItem
+          key={treeItemData.name} // Ensure unique key for each TreeItem
           nodeId={treeItemData.id}
           label={
             <span onClick={(event) => handleNodeClick(event, treeItemData)}>
@@ -40,9 +39,9 @@ const LandingPage = ({ treeItems, onNodeSelect }) => {
               .filter((item) => item.id !== treeItemData.id && item.parentId === treeItemData.parentId)
               .map((item) => item.id);
             console.log( "sibling",treeItems
-              .filter((item) => item.id !== treeItemData.id && item.parentId === treeItemData.parentId))
+              .filter((item) => item.id !== treeItemData.id && item.parentId === treeItemData.parentId).map((item)=>item.name))
             const newExpandedIds = isExpanded ? expandedNodeId.filter((nodeId) => nodeId !== treeItemData.id) : [treeItemData.id];
-            console.log("expandedNodeIde",expandedNodeId)
+            
             console.log("new",newExpandedIds)
             setExpandedNodeId((prevExpanded) => {
               if (isExpanded) {
@@ -53,6 +52,7 @@ const LandingPage = ({ treeItems, onNodeSelect }) => {
                   .concat(newExpandedIds);
               }
             });
+            console.log("expandedNodeIde",expandedNodeId)
           }}
           expanded={isExpanded} // Set expanded prop based on state
         >

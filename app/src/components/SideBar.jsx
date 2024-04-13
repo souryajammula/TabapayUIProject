@@ -52,7 +52,7 @@ const SideBar = ({ handleNodeSelect }) => {
         <Toolbar />
         <Box sx={{ overflow: 'auto', height: 'calc(100vh - 64px - 56px)' }}>
           {/* Adjusted height to accommodate Footer */}
-          <LandingPage treeItems={seasons} onNodeSelect={handleNodeSelect} />
+          <LandingPage onNodeSelect={handleNodeSelect} />
         </Box>
       </Drawer>
       <Footer />
