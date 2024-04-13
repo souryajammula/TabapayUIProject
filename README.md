@@ -87,7 +87,7 @@ The MenuDialog component is conditionally rendered based on whether an item is s
 ```javascript
 {(selectedItem.name != null) ? <MenuDialog key={menuDialogKey} selectedItem={selectedItem} /> : null}
 ```
-![Alert Menu](https://raw.githubusercontent.com/souryajammula/TabapayUIProject/main/app/src/alert.png)
+![Alert Menu](https://raw.githubusercontent.com/souryajammula/TabapayUIProject/main/src/alert.png?token=GHSAT0AAAAAACQJJ6KPJISJVQQ65NHFLRAMZQ25TZA)
 
 ## Part 3
 Add an Area to the right to Represent the clicked Tree Item
@@ -100,7 +100,8 @@ When a user clicks on a menu item in the sidebar of the Landing Page, the handle
 <Body selectedItem={selectedItem}/>
 ```
 
-![Title of TreeItem Clicked](https://raw.githubusercontent.com/souryajammula/TabapayUIProject/main/app/src/title.png)
+![Title of TreeItem Clicked](https://raw.githubusercontent.com/souryajammula/TabapayUIProject/main/src/title.png?token=GHSAT0AAAAAACQJJ6KP2TR4OGSC3VSI74H2ZQ25UGQ
+)
 
 ## Part 4
 Add a Header and Footer. Add a Logo to the Left in the Header...
