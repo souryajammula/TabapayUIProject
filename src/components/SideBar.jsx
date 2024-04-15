@@ -46,7 +46,21 @@ const SideBar = ({ handleNodeSelect }) => {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', overflow: 'auto' },
+          [`& .MuiDrawer-paper`]: { 
+            width: drawerWidth,
+            boxSizing: 'border-box',
+            overflow: 'auto',
+            // // Adjusting the width for different screen sizes
+            // '@media (max-width: 600px)': {
+            //   width: '50%', // Drawer occupies full width on small screens
+            // },
+            // '@media (min-width: 601px) and (max-width: 960px)': {
+            //   width: drawerWidth * 0.8, // Drawer occupies 80% of width on medium screens
+            // },
+            // '@media (min-width: 961px)': {
+            //   width: drawerWidth, // Drawer occupies standard width on large screens
+            // },
+          },
         }}
       >
         <Toolbar />

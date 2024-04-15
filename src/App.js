@@ -15,7 +15,7 @@ const App = () => {
     setSelectedItem(item);
   };
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Box sx={{ display: 'flex' }}>
       <SideBar handleNodeSelect={handleNodeSelect}/>
@@ -25,7 +25,7 @@ const App = () => {
       <Footer/>
       </Box>
       
-    </BrowserRouter>
+    </>
   );
 };
 

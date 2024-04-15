@@ -7,7 +7,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import { seasons } from '../SampleData'; // Assuming you have sample data in a separate file
 
-const LandingPage = ({onNodeSelect }) => {
+const LandingPage = ({onNodeSelect}) => {
   const [expandedNodeId, setExpandedNodeId] = useState([]);
 
   const getTreeItemsFromData = (treeItems, parentIds = []) => {
