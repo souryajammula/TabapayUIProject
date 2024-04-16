@@ -5,7 +5,7 @@ import { TreeItem } from '@mui/x-tree-view/TreeItem';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-import { seasons } from '../SampleData'; // Assuming you have sample data in a separate file
+import { sampleData } from '../SampleData'; // Assuming you have sample data in a separate file
 
 const LandingPage = ({onNodeSelect}) => {
   const [expandedNodeId, setExpandedNodeId] = useState([]);
@@ -41,8 +41,6 @@ const LandingPage = ({onNodeSelect}) => {
             console.log( "sibling",treeItems
               .filter((item) => item.id !== treeItemData.id && item.parentId === treeItemData.parentId).map((item)=>item.name))
             const newExpandedIds = isExpanded ? expandedNodeId.filter((nodeId) => nodeId !== treeItemData.id) : [treeItemData.id];
-            
-            console.log("new",newExpandedIds)
             setExpandedNodeId((prevExpanded) => {
               if (isExpanded) {
                 return newExpandedIds;
@@ -71,7 +69,7 @@ const LandingPage = ({onNodeSelect}) => {
       }}
       expandedItems={expandedNodeId} // Pass the expandedNodeId as the expanded prop to SimpleTreeView
     >
-      {getTreeItemsFromData(seasons)}
+      {getTreeItemsFromData(sampleData)}
     </SimpleTreeView>
   );
 };

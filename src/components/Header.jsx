@@ -12,7 +12,7 @@ export default function Header() {
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar sx={{backgroundColor: '#120880'}}>
         <img src={logo} alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
-          <Typography variant="h6" noWrap component="div"  sx={{backgroundColor: '#120880',textAlign: 'center', width: '100%' }}>
+          <Typography variant="h6" noWrap component="div"  sx={{marginRight:'90px',backgroundColor: '#120880',textAlign: 'center', width: '100%' }}>
             UI Project
           </Typography>
         </Toolbar>
